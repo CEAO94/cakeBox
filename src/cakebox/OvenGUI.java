@@ -3,6 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package cakebox;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.*;
 
 /**
@@ -311,9 +314,41 @@ public class OvenGUI extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         //ADD CAKE
-        String cakeType;
-        cakeType = jComboBox1.getSelectedItem().toString();
-        si.push(cakeType);
+        String cakeType = jComboBox1.getSelectedItem().toString().trim();
+        String weight = jTextField2.getText().trim();
+        String bestBefore = jTextField3.getText().trim();
+        
+        //Limit to 5 cakes
+        if (si.size() > 5) { 
+        jTextArea3.append("MAX 05 cakes in the oven!" + "\n");
+        return;    
+        }
+        
+        //Valid fields
+        if (cakeType.isEmpty() || weight.isEmpty() || bestBefore.isEmpty()) {
+        return;
+        }
+        if (!weight.matches("\\d+")) {
+        return; 
+        }
+        
+        //Validate format
+        LocalDate today = LocalDate.now();
+        LocalDate date;
+        try {
+            
+            date = LocalDate.parse(bestBefore);
+                       
+        } catch (DateTimeParseException e) {
+            return;
+        }
+        if (date.isAfter(today.plusWeeks(2))) {
+            return;
+        }
+        
+        //Everyting checked - push display
+        String cakeLabel = cakeType + ", " + weight + ", " + bestBefore;
+        si.push(cakeLabel);
         jTextArea1.append(cakeType + "\n");
     }//GEN-LAST:event_jButton1ActionPerformed
 
