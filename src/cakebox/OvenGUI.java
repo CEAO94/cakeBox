@@ -158,13 +158,13 @@ public class OvenGUI extends javax.swing.JFrame {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 348, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 91, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane4)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -229,16 +229,16 @@ public class OvenGUI extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(45, 45, 45)
+                                .addGap(56, 56, 56)
                                 .addComponent(jButton2)
-                                .addGap(29, 29, 29)
+                                .addGap(18, 18, 18)
                                 .addComponent(jButton4))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(50, 50, 50)
                                 .addComponent(jButton1)
                                 .addGap(18, 18, 18)
                                 .addComponent(jButton5)))
-                        .addGap(0, 22, Short.MAX_VALUE)))
+                        .addGap(0, 137, Short.MAX_VALUE)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
@@ -255,7 +255,7 @@ public class OvenGUI extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(14, 14, 14)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(129, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -326,7 +326,7 @@ public class OvenGUI extends javax.swing.JFrame {
         }
 
         //Everyting checked - push display
-        String cakeLabel = cakeType + ", " + weight + ", " + bestBefore;
+        String cakeLabel = cakeType + ", Weight: " + weight + " g. Best before: " + bestBefore;
         si.push(cakeLabel);
         jTextArea1.append(cakeType + "\n");
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -335,7 +335,7 @@ public class OvenGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         //LIST TOP CAKE
         if (!si.isEmpty()) {
-            jTextArea3.append("The top cake is: " + si.peek() + "\n");
+            jTextArea3.append("Cake type: " + si.peek() + "\n");
         } else {
             jTextArea3.append("No cake in the oven " + "\n");
         }
