@@ -6,7 +6,7 @@ package cakebox;
 
 /**
  *
- * @author carlo
+ * @author Carlos Eduardo Alves de Oliveira
  */
 public class CakeBox {
 
@@ -15,8 +15,9 @@ public class CakeBox {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        //Creates an INSTANCE of the OvenGUI.java 
         OvenGUI ovenApp = new OvenGUI();
-        ovenApp.setVisible(true);
+        ovenApp.setVisible(true); //Makes the instance visible (true)
         
         
     }

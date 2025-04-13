@@ -9,10 +9,13 @@ import java.util.Iterator;
 
 /**
  *
- * @author carlo
+ * @author Carlos Eduardo Alves de Oliveira
  */
+
+//Implements the Stack using an ArrayList and controls how cakes are added, viewd and removed using Stack logic. 
 public class MyCakes implements CakeGUI {
 
+    //ArrayList is flexible in size, but the behavior is controlled to Stack principles. 
     private ArrayList<String> theOven;
 
     public MyCakes() {
@@ -76,7 +79,7 @@ public class MyCakes implements CakeGUI {
        it = theOven.iterator();
        if(theOven.isEmpty())
        {
-           str = str.concat("STACK IS EMPTY!");
+           str = str.concat("OVEN IS EMPTY!");
        }
        else
        {
