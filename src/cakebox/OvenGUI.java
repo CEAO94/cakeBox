@@ -10,8 +10,11 @@ import java.util.*;
 
 /**
  *
- * @author carlo
+ * @author Carlos Eduardo Alves de Oliveira
  */
+
+//Where graphical user interface is built and handled.
+//There are several validations steps
 public class OvenGUI extends javax.swing.JFrame {
 
     /**
@@ -278,15 +281,15 @@ public class OvenGUI extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        //REMOVE TOP
+        //REMOVE TOP - Removes the top cake and returns it
         String cakeremoved = (String) si.pop();
-        jTextArea2.append(cakeremoved + " was removed." + "\n");
+        jTextArea2.append("REMOVED: " + cakeremoved + "\n");
 
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        //ADD CAKE
+        //ADD CAKE - Adds a new cake to the top of the stack.
         String cakeType = jComboBox1.getSelectedItem().toString().trim();
         String weight = jTextField2.getText().trim();
         String bestBefore = jTextField3.getText().trim();
@@ -299,17 +302,17 @@ public class OvenGUI extends javax.swing.JFrame {
 
         //Validation - fields empty
         if (cakeType.isEmpty() || weight.isEmpty() || bestBefore.isEmpty()) {
-            jTextArea3.append("All text fields must be filled in – check the format!" + "\n");
+            jTextArea3.append("All text fields must be filled in | check the format!" + "\n");
             return;
         }
 
-        //Validation - INT on weight
+        //Validation - INT/numerals on weight
         if (!weight.matches("\\d+")) {
             jTextArea3.append("Weight: just numbers allowed!" + "\n");
             return;
         }
 
-        //Validate format
+        //Validate DATE format
         LocalDate today = LocalDate.now();
         LocalDate date;
         try {
@@ -317,7 +320,7 @@ public class OvenGUI extends javax.swing.JFrame {
             date = LocalDate.parse(bestBefore);
 
         } catch (DateTimeParseException e) {
-            jTextArea3.append("Format: YYYY-MM-DD" + "\n");
+            jTextArea3.append("Date Format: YYYY-MM-DD" + "\n");
             return;
         }
         if (date.isAfter(today.plusWeeks(2))) {
@@ -333,7 +336,7 @@ public class OvenGUI extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        //LIST TOP CAKE
+        //LIST TOP CAKE - Returns the top cake without removing it;
         if (!si.isEmpty()) {
             jTextArea3.append("Cake type: " + si.peek() + "\n");
         } else {
@@ -344,7 +347,7 @@ public class OvenGUI extends javax.swing.JFrame {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        //REMOVE ALL CAKES
+        //REMOVE ALL CAKES - Removes all cakes from the stack;
         si.emptyStack();
         jTextArea2.append("All cakes were removed! " + "\n");
     }//GEN-LAST:event_jButton5ActionPerformed
