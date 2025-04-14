@@ -4,9 +4,9 @@ This project is a native Java Application developed using NetBeans. The project 
 The objective is to demonstrate how data structures can manage inventory systems efficiently, ensuring proper addition, tracking and removal of items. 
 
 ## 📸 Scrennshots 📸
-<img src="https://github.com/user-attachments/assets/e5b70f21-62f8-48c2-a721-7cdaf0c580e7" width=250/>
-<img src="https://github.com/user-attachments/assets/a8f166d2-3a8c-4768-8ef1-e9e6db93d703" width=310/>
-<img src="https://github.com/user-attachments/assets/72242cf3-2144-4377-b79a-cbf534672fba" width=290/>
+<img src="https://github.com/user-attachments/assets/e5b70f21-62f8-48c2-a721-7cdaf0c580e7" width=220/>
+<img src="https://github.com/user-attachments/assets/a8f166d2-3a8c-4768-8ef1-e9e6db93d703" width=280/>
+<img src="https://github.com/user-attachments/assets/72242cf3-2144-4377-b79a-cbf534672fba" width=250/>
 
 ### Technologies
 - Java
