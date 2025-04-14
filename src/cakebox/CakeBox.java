@@ -14,7 +14,6 @@ public class CakeBox {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
         //Creates an INSTANCE of the OvenGUI.java 
         OvenGUI ovenApp = new OvenGUI();
         ovenApp.setVisible(true); //Makes the instance visible (true)
